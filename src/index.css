@@ -82,8 +82,36 @@ body{
     font-weight: 700;
 }
 @media (max-width: 600px){
+    .container{
+        margin-top: 120px;
+    }
    .display{
     width: 390px;
-    height: 400px;
+    height: 450px;
+   }
+   .display .pwd-length{
+    font-size: 1.2rem;
+   }
+   .display .pwd-length input{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+   }
+   .display .checkboxes{
+    font-size: 1.2rem;
+   }
+   .pwd-btn{
+    width: 250px;
+    padding: 0.8rem 0;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 30px;
+    font-size: inherit;
+   }
+   .pwd{
+    font-size: 1.3rem;
+   }
+   .pwd input{
+    padding: 0.8rem;
+    font-size: inherit;
    }
   }
