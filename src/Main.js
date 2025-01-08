@@ -2,7 +2,7 @@
 
   function Main(){
       const [password, setPassword] = useState("");
-      const [length, setlength] = useState(6);
+      const [length, setLength] = useState(6);
       const [includeUppercase, setIncludeUppercase] = useState(false);
       const [includeLowercase, setIncludeLowercase] = useState(false);
       const [includeNumbers, setIncludeNumbers] = useState(false);
@@ -19,35 +19,39 @@
           if(includeNumbers) characters += numbers;
           if(includeSymbols) characters += symbols;
       
-      if(characters === 0){
+      if(characters.length === 0){
         alert("Please select atleast one character type");
+        return
       }
       let passwordGenerate = "";
       for(let i=0;i<length;i++){
         let random = Math.floor(Math.random()*characters.length);
         passwordGenerate += characters[random];
       }
-      setPassword(generatePassword);
+      setPassword(passwordGenerate);
+    
     };
+     
     return (
       <div className='container'>
           <h1>Password generator</h1>
           <label htmlFor="textbox">Password length</label>
-          <input type="text" id="textbox"/>
+          <input type="number" value={length} onChange={(e) => setLength(Number(e.target.value))} id="lengthbox" min="4"
+        max="20"/>
           <div>
-              <input type="checkbox" name="include uppercase letters" id="uppercase" />
+              <input type="checkbox" name="include uppercase letters" id="uppercase" onChange={(e) => setIncludeUppercase(!includeUppercase)}/>
               <label htmlFor="uppercase">include uppercase letters</label>
-              <input type="checkbox" name="include lowercase letters" id="lowercase" />
+              <input type="checkbox" name="include lowercase letters" id="lowercase" onChange={(e) => setIncludeLowercase(!includeLowercase)}/>
               <label htmlFor="lowercase">include lowercase letters</label>
-              <input type="checkbox" name="include numbers" id="numbers" />
+              <input type="checkbox" name="include numbers" id="numbers" onChange={(e) => setIncludeNumbers(!includeNumbers)}/>
               <label htmlFor="numbers">include numbers</label>
-              <input type="checkbox" name="include symbols" id="symbols" />
+              <input type="checkbox" name="include symbols" id="symbols" onChange={(e) => setIncludeSymbols (!includeSymbols) }/>
               <label htmlFor="symbols">include symbols</label>
           </div>
-          <button>Generate password</button>
+          <button onClick={generatePassword}>Generate password</button>
           <div>
               <label htmlFor="pwd">Generated password</label>
-              <input type="text" id='pwd'/>
+              <input type="text" id='pwd' value={password}/>
           </div>
       </div>
     )
