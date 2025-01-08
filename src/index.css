@@ -24,7 +24,7 @@ body{
     border: 1px solid black;
     border-radius: 10px;
     width: 500px;
-    height: 350px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     background-color: #141414dc; 
@@ -71,6 +71,8 @@ body{
 }
 .pwd{
     padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 .pwd input{
     margin-top: 20px;
@@ -80,6 +82,7 @@ body{
     border: none;
     border-radius: 3px;
     font-weight: 700;
+    width: 300px;
 }
 @media (max-width: 600px){
     .container{
@@ -111,7 +114,8 @@ body{
     font-size: 1.3rem;
    }
    .pwd input{
-    padding: 0.8rem;
+    width: 330px;
+    padding: 0.6rem;
     font-size: 1rem;
    }
   }

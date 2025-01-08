@@ -88,7 +88,7 @@ function Main() {
           Generate password
         </button>
         <div className="pwd">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd">Generated password:</label>
           <input type="text" id="pwd" value={password} readOnly />
         </div>
       </div>
