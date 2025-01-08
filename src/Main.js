@@ -84,9 +84,11 @@ function Main() {
             <label htmlFor="symbols">include symbols</label>
           </div>
         </div>
-        <button onClick={generatePassword}>Generate password</button>
-        <div>
-          <label htmlFor="pwd">Generated password</label>
+        <button onClick={generatePassword} className="pwd-btn">
+          Generate password
+        </button>
+        <div className="pwd">
+          <label htmlFor="pwd">Password:</label>
           <input type="text" id="pwd" value={password} readOnly />
         </div>
       </div>
